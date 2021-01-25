@@ -14,5 +14,5 @@ let result = [];
     }
     return result;
 }
-let arr =  [9, 1, 2, 3, 1, 2, 4, 3, 9];
+let arr =  [9, 1, 2, 3, 1, 2, 4, 3];
 console.log(find_duplicates(arr));

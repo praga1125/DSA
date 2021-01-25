@@ -13,5 +13,5 @@ function sorted(arr) {
   }
   console.log(arr);
 }
-const arr = [1, 2, 0, 1, 2, 2];
+const arr = [1, 2, 0, 1, 2, 1];
 sorted(arr);
