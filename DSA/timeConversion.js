@@ -1,6 +1,7 @@
 const converter = (temp) => {
-    const [time, modifiers] = temp.split(' ');
-    let [hours, minutes, seconds] = time.split(':');
+    let [hours, minutes, secondWithModifier] = time.split(':');
+    let seconds = secondWithModifier.slice(0,2);
+    let modifiers = secondWithModifier.slice(2,4);
     if(hours == '12'){
         hours = '00';
     }
@@ -9,6 +10,6 @@ const converter = (temp) => {
     }
     return `${hours}:${minutes}:${seconds}`;
 }
-const time = "07:05:45 PM"
+const time = "09:00:00PM"
 const result = converter(time);
 console.log(result);
