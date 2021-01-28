@@ -1,0 +1,15 @@
+.custom-card {
+    align-items: center;
+    
+}
+.pointer {
+    cursor: pointer;
+    margin: 0.2%;
+}
+.row >[class^=col-]{
+    text-align: center;
+    padding-top: .50rem;
+    padding-bottom: .50rem;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+}
