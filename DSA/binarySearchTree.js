@@ -73,8 +73,6 @@ for(let i = 0; i < values.length; i++){
 let root = obj.getRootNode();
 
 let result = [];
-let ans = obj.maxValue(root) - 1;
-console.log(ans);
 
 console.log(`inorder traversal`);
 console.log(`------------------`);
