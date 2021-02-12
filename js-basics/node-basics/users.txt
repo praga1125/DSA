@@ -1,0 +1,5 @@
+Reg_No,Name,Dept,Ph_No
+1,Pragadeesh,CS,6382201825
+2,viki,IT,8220430623
+3,ammma,B.ED,9487327822
+4,appa,B.SC,9443320980

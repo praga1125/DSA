@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>booking form</title>
+        <script src="server.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="outlet.css">
+    </head>
+    <body>
+      <div class="card custom-card">
+        <div class="card-body">
+          <h1 class="mx-auto" style="width: 400px;">Rail Ticket Booking</h1>
+         <marquee onclick="alert(`offer ended..`)">......Offer 50 % for First 10 booking users %...... </marquee>
+
+          <div class="form-group">
+            <label > NAME : </label>
+            <input type="text" class="form-control" placeholder="Enter your name" id="name">
+          </div>
+          <div class="form-group">
+          <label for="exampleFormControlSelect1" >BOOKING TYPE: </label>
+          <select class="form-control" id="type">
+          <option value="takal" >TAKAL</option>
+          <option value="GENERAL"> GENERAL </option>
+          <option value="PREMIUM TATKAl"> PREMIUM TAKAL </option>
+          </select>
+          </div>
+          <div class="form-group">
+          <label>JOURNEY FROM : </label>
+          <input type="text" class="form-control" id="from" placeholder="Enter departure place"><br>
+          <label>JOURNEY TO  : </label>
+          <input type="text" class="form-control" id="to" placeholder="Enter destination place">
+          </div>
+          <div class="form-group">
+              <label>CLASS: </label>
+              <select class="form-control" id="class">
+                  <option value="Sleeper"> Sleeper </option>
+                  <option value="3 AC"> 3 AC </option>
+                  <option value="2 AC"> 2 AC </option>
+                  <option value="2 S"> 2 S </option>
+              </select>
+            </div>
+          <label>JOURNEY DATE: </label>
+          <input type="date" id="date" class="form-control"><br><br>
+          <button class="btn btn-primary" onclick="server()" type="button" id='button'>BOOK NOW</button>
+        </div>
+      </div>
+    </body>
+</html>

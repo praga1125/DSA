@@ -1,0 +1,23 @@
+-   File (create, read, write, update(5 PM)) (function)
+
+addUser(obj){
+    {
+        status: 'success', 'failed'
+    }
+}
+
+readUser(id){
+    should return object .... [ '1', 'Pragadeesh', 'CS', '6382201825' ]
+}
+
+updateUser(id, {}){
+    should return object .... [ '1', 'Pragadeesh', 'CS', '6382201825' ]
+}
+
+
+readAllUsers(){
+    should return array of objects
+}
+
+
+-   express (get, post)
