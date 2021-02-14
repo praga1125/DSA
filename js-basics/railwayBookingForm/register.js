@@ -13,3 +13,6 @@ function register(){
     document.write(JSON.stringify(obj));
 }
 
+function test() {
+    console.log('TEST');
+}
