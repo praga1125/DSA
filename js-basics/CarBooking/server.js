@@ -19,6 +19,17 @@ app.get('/',(req,res) => {
  // res.send(obj);
 });
 
+app.get('/login',(req,res) => {
+  const publicDirectoryPath = path.join(__dirname, 'login.html');
+ res.sendFile(publicDirectoryPath);
+});
+
+app.post('/login',(req,res) => {
+  console.log(req.body, '$$$$$$$$$$$$$$$$$$$');
+  //  Validate user
+  return res.redirect('/');
+});
+
 app.post('/Booking',(req,res) => {
   const payload = {
     name : req.body.name,

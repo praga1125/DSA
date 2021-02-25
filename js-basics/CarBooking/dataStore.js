@@ -13,7 +13,7 @@ const initialize = () => {
     }
     console.log('Database connected...');
     connection.query('USE BookingDB', (error, results) => {
-          if (error) throw error;
+      if (error) throw error;
       console.log('Booking Db attached...');
     });
   });
@@ -22,9 +22,9 @@ const initialize = () => {
     return new Promise((resolve, reject) => {
         const query = `INSERT INTO bookings VALUES("${name}","${carType}","${fromAddress}","${toAddress}",'${DateOfBooking}');`
         connection.query(query, (err) => {
-            if(err) reject('duplicate entry..');
-            console.log('travel Booked..........');
-            resolve('travel Booked..');
+          if(err) reject('duplicate entry..');
+          console.log('travel Booked..........');
+          resolve('travel Booked..');
         });
     });
  }
@@ -32,9 +32,8 @@ const cancelBooking = (name) => {
     return new Promise((resolve, reject) => {
         const query = `DELETE FROM bookings WHERE name = "${name}";`
         connection.query(query, (err) => {
-            if(err) reject("No Booked By User.......");
-
-            resolve('Booking Canceled.....');
+          if(err) reject("No Booked By User.......");
+          resolve('Booking Canceled.....');
         });
     });
 }
