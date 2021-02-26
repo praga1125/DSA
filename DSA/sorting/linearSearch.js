@@ -7,10 +7,10 @@ let search = (arr, target) => {
     }
 }
 const arr = [5, 6, 7, 9, 2, 1, 3];
-const target = 1;
-let result = 0;
+const target = 5;
+let result = -1;
 result = search(arr, target);
-if(result == 0){
+if(result == -1){
     console.log(`Search is not found `);
 }
 else{
