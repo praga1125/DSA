@@ -25,8 +25,8 @@
 //   }
 // }
 // const obj1 = new two();
-let i=0,j=1;
-let m,n;
-(m, n) = i, j;
-console.log(m);
-console.log(n);
+// let i=0,j=1;
+// let m,n;
+// (m, n) = i, j;
+// console.log(m);
+// console.log(n);
