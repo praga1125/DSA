@@ -30,3 +30,6 @@
 // (m, n) = i, j;
 // console.log(m);
 // console.log(n);
+if(1){
+    console.log(`helooo`);
+}
