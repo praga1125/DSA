@@ -30,6 +30,8 @@
 // (m, n) = i, j;
 // console.log(m);
 // console.log(n);
-if(1){
-    console.log(`helooo`);
-}
+// if(1){
+//     console.log(`helooo`);
+// }
+let str = "hellooo";
+let indx = str.indexOf()
