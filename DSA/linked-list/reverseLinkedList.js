@@ -48,4 +48,4 @@ for(let i = 0;i<arr.length;i++){
     obj.insertNode(arr[i]);
 }
 let result = reverseList(obj.head);
-printList(result)
+printList(result);
