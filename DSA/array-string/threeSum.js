@@ -33,6 +33,6 @@ let threeSum = (nums) => {
 	}
 	return result;
 }
-let arr = [11, 2, 3, -5, -44, -44, 88];
+let arr = [11, 2, 3, -5, -44, -44, 88,-5,-6];
 let result = threeSum(arr);
 console.log(result);

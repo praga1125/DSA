@@ -1,40 +1,20 @@
-var threeSum = function(nums) {
-    // console.log(nums);
-	var rtn = [];
-	if (nums.length < 3) {
-		return rtn;
-	}
-	nums = nums.sort(function(a, b) {
-		return a - b;
-	});
-	for (var i = 0; i < nums.length - 2; i++) {
-		if (nums[i] > 0) {
-            return rtn;
-		}
-		if (i > 0 && nums[i] == nums[i - 1]) {
-			continue;
-		}
-		for (var j = i + 1, k = nums.length - 1; j < k;) {
-			if (nums[i] + nums[j] + nums[k] === 0) {
-				rtn.push([nums[i], nums[j], nums[k]]);
-				j++;
-				k--;
-				while (j < k && nums[j] == nums[j - 1]) {
-					j++;
-				}
-				while (j < k && nums[k] == nums[k + 1]) {
-					k--;
-				}
-			} else if (nums[i] + nums[j] + nums[k] > 0) {
-				k--;
-			} else {
-				j++;
-			}
-		}
-	}
-	return rtn;
-}
-let arr = [-10, 6, 4, 8, -4, -4];
-let result = threeSum(arr);
-for(let i=0;i<result.length;i++)
-console.log(result[i]);
+// BFS Iterative Solution
+var maxDepth = function(root) {
+    if (!root) return 0;
+    let maxDepth = 0, queue = [{node: root, level:1}];
+    while(queue.length) {
+        let {node, level} = queue.shift();
+        maxDepth = Math.max(maxDepth, level);
+        if (node.left) queue.push({node: node.left, level: level+1});
+        if (node.right) queue.push({node: node.right, level: level+1});
+    }
+    return maxDepth;
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
+};
+let arr = [5,4,3,2,1,0];
+let result =0;
+for(let i=0;i<arr.length;i++)
+   result = maxDepth(arr[i]);
+
+console.log(result);
