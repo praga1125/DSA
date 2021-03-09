@@ -1,22 +1,21 @@
-var threeSum = function(nums) {
-    // console.log(nums);
-	var rtn = [];
+let threeSum = (nums) => {
+	let result = [];
 	if (nums.length < 3) {
-		return rtn;
+		return result;
 	}
 	nums = nums.sort(function(a, b) {
 		return a - b;
 	});
-	for (var i = 0; i < nums.length - 2; i++) {
+	for (let i = 0; i < nums.length - 2; i++) {
 		if (nums[i] > 0) {
-            return rtn;
+            return result;
 		}
 		if (i > 0 && nums[i] == nums[i - 1]) {
 			continue;
 		}
-		for (var j = i + 1, k = nums.length - 1; j < k;) {
+		for (let j = i + 1, k = nums.length - 1; j < k;) {
 			if (nums[i] + nums[j] + nums[k] === 0) {
-				rtn.push([nums[i], nums[j], nums[k]]);
+				result.push([nums[i], nums[j], nums[k]]);
 				j++;
 				k--;
 				while (j < k && nums[j] == nums[j - 1]) {
@@ -32,9 +31,8 @@ var threeSum = function(nums) {
 			}
 		}
 	}
-	return rtn;
+	return result;
 }
-let arr = [-10, 6, 4, 8, -4, -4];
+let arr = [11, 2, 3, -5, -44, -44, 88];
 let result = threeSum(arr);
-for(let i=0;i<result.length;i++)
-console.log(result[i]);
+console.log(result);
