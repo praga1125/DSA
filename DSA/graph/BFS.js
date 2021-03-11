@@ -1,3 +1,22 @@
+class queue{
+    constructor(){
+        this.item = [];
+    }
+ enqueue(values){
+    return this.item.push(values);
+  }
+  dequeue(){
+      if(this.isEmpty())
+       return "underflow";
+        return this.item.shift();     
+ }
+  isEmpty(){ 
+    if(this.item.length == 0){
+        return true;
+    }
+}
+}
+
 class graph{
     constructor(size){
         this.noOfVertices = size;
@@ -10,34 +29,25 @@ class graph{
         this.adjList.get(src).push(dist);
         this.adjList.get(dist).push(src);
     }
-    printGraph(){
-        let keys = this.adjList.keys();
-        for(let i of keys){
-            let values = this.adjList.get(i);
-            let concat = "";
-        for(let j of values){
-            concat += j+" ";
-        }
-        console.log(`${i} -> ${concat}`);
-    }
-    }
-    bfs(startingNode){
+    bfs(startingNode){  
         let visited = {};
-        let queue = new Queue();
+        let result = [];
+        let q = new queue();
         visited[startingNode] =  true;
-        queue.enqueue(startingNode);
-        while(queue.isEmpty()){
-            let getElement = queue.dequeue();
-            console.log(getElement);
+        q.enqueue(startingNode);
+        while(!q.isEmpty()){
+            let getElement = q.dequeue();
+            result.push(getElement);
             let getList = this.adjList.get(getElement);
             for(let i in getList){
                 let neighbour = getList[i];
                 if(!visited[neighbour]){
                     visited[neighbour] = true;
-                    queue.enqueue(neighbour);
+                    q.enqueue(neighbour);
                 }
             }
         }
+        console.log(result);
     }
 }
 
@@ -59,4 +69,3 @@ obj.addEdges('c', 'f');
 console.log("BFS:");
 obj.bfs('a');
 
-obj.printGraph();
