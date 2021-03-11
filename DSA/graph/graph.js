@@ -21,24 +21,6 @@ class graph{
         console.log(`${i} -> ${concat}`);
     }
     }
-    bfs(startingNode){
-        let visited = {};
-        let queue = new Queue();
-        visited[startingNode] =  true;
-        queue.enqueue(startingNode);
-        while(queue.isEmpty()){
-            let getElement = queue.dequeue();
-            console.log(getElement);
-            let getList = this.adjList.get(getElement);
-            for(let i in getList){
-                let neighbour = getList[i];
-                if(!visited[neighbour]){
-                    visited[neighbour] = true;
-                    queue.enqueue(neighbour);
-                }
-            }
-        }
-    }
 }
 
 const obj = new graph(6);
@@ -55,8 +37,5 @@ obj.addEdges('d', 'e');
 obj.addEdges('e', 'f'); 
 obj.addEdges('e', 'c'); 
 obj.addEdges('c', 'f'); 
-
-console.log("BFS:");
-obj.bfs('a');
 
 obj.printGraph();
