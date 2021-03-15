@@ -1,5 +1,5 @@
-i = [];
-console.log(i.length);
-console.log(Array.from(i));
-console.log(Array(i.length).fill(true));
-if(0) console.log("helpp");
+let n = 'apple';
+for(let i=0;i<n.length;i++){
+let s = n.charCodeAt(i);
+console.log(s);
+}
