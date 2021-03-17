@@ -20,6 +20,9 @@ queue.prototype.pop = function() {
 	}
 	return console.log(`The dequeued element is : ${pop}`);
 }
+queue.prototype.peek = function(){
+	return console.log(`The peek element is ${this.stack1[0]}`);
+}
 queue.prototype.display = function() {
 	console.log(`The values in the queue :`);
 	console.log(this.stack1);
@@ -35,6 +38,7 @@ obj.isEmpty();
 for(let i=0;i<arr.length;i++){
 	obj.push(arr[i]);
 }
+obj.peek();
 obj.display();
 obj.pop();
 obj.pop();
