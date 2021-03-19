@@ -24,4 +24,4 @@ console.log(`The target element is ${target}`);
 search(matrix, target);
 target = 1;
 console.log(`The target element is ${target}`);
-search(matrix, target)
+search(matrix, target);
