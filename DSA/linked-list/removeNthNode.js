@@ -26,7 +26,8 @@ class linkedList{
  removeNthNode(head , target){
     let left, before, right = head;
   left = before = {next: head}; 
-  while (target--) right = right.next;
+  while (target--) 
+  right = right.next;
   while (right) {
     right = right.next;
     left = left.next;
