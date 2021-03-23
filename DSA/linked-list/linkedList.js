@@ -16,7 +16,7 @@ class linkedList{
         } else {
        let current = this.head;
        while(current.next){
-           current = current.next;
+         current = current.next;
        }    
        current.next = node1;
     }  
@@ -111,6 +111,7 @@ obj.addElements(22);
 obj.addElements(23);
 obj.addElements(44);
 obj.insertAt(54, 0);
+console.log(ans);
 console.log(`The deleted element is : ${obj.deleteElement(54)}`);
 console.log(`The deleted elements is : ${obj.deleteAt(2)}`);
 // obj.clearList();
