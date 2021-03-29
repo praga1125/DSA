@@ -17,7 +17,12 @@ function findDuplicate(arr){
     return slow;
 }
 
-let arr = [1, 2, 3, 2, 4, 4];
+let arr = [1, 2, 3, 2];
 console.log(`The given array is : ${arr}`);
 let result =  findDuplicate(arr);
-console.log(`The duplicated element is : ${result}`);
+if(result == undefined){
+    console.log(`The array does not contains duplicate elements`);
+}
+else{
+    console.log(`The duplicated element is : ${result}`);
+}
