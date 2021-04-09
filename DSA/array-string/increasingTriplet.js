@@ -7,7 +7,8 @@ function increasingTriplet(arr){
       }
       if (currentNumber > firstNumber) {
         secondNumber = currentNumber;
-      } else {
+      } 
+      else {
         firstNumber = currentNumber;
       }
     }

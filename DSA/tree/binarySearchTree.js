@@ -53,8 +53,8 @@ class binarySearchTree{
             this.inorder(node.right); 
         }
     } 
-        postorder(node){ 
-            if(node !== null) 
+    postorder(node){ 
+        if(node !== null) 
             {  
                 this.inorder(node.left);
                 this.inorder(node.right); 
