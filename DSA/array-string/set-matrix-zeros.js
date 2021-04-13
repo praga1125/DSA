@@ -13,7 +13,7 @@ for(let i =0;i<matrix.length;i++){
     }
 }
 for(let i=0;i<matrix.length;i++){
-    for(j=0;j<matrix[i].length;j++){
+    for(let j=0;j<matrix[i].length;j++){
         if(xs.has(i) || ys.has(j)){
             matrix[i][j] = 0;
         }
@@ -26,6 +26,10 @@ return matrix;
 };
 
 let matrix = [[1,1,1],[1,0,1],[1,1,1]];
-console.log(matrix);
+console.log(`The given array  is :`);
+for(let i of matrix)
+console.log(i);
 let result = setZero(matrix);
-console.log(result);
+console.log(`The set matrix zero :`);
+for(let j of result)
+console.log(j);
