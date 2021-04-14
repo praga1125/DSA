@@ -17,7 +17,8 @@ EX.LinkedStack = function(){
 			head = node;
 			head.next = null;
 			size = 1;
-		}else{
+		}
+		else{
 			var current = head;
 			while(current.next !== null){
 				current = current.next;
