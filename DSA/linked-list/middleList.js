@@ -1,4 +1,4 @@
-class node{
+class Node{
     constructor(data, next = null){
         this.data = data;
         this.next = next;
@@ -7,21 +7,18 @@ class node{
 class linkedList{
     constructor(){
         this.head = null;
-        this.size = 0;
+        this.tail = null;
     }
-    addElements(elements){
-        let node1 = new node(elements);
+    insert(data){
+        let node = new Node(data);
         if(this.head == null){
-            this.head = node1;
-        } else {
-       let current = this.head;
-       while(current.next){
-           current = current.next;
-       }    
-       current.next = node1;
-    }  
-    this.size++ ;
- }
+            this.head = node;
+        }
+        else{
+            this.tail.next = node;
+        }
+        this.tail = node;
+    }
   middleNode(head) {
     let low = head, high = head;
     while (high && high.next) {
@@ -33,10 +30,9 @@ class linkedList{
 }
 
 const obj = new linkedList();
-obj.addElements(20);
-obj.addElements(22);
-obj.addElements(25);
-obj.addElements(23);
-obj.addElements(44);
+let arr = [5, 6, 7, 8, 9];
+for(i of arr){
+    obj.insert(i)
+}
 let result = obj.middleNode(obj.head);
 console.log(`The middle of the linked list is : ${result.data}`);
