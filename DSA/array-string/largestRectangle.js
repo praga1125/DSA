@@ -17,7 +17,7 @@ function largestRectangleArea(heights){
             curr = stack.pop();
             currHeight = heights[curr];
             top = stack[stack.length-1];
-            topH = heights[top];
+            topHeight = heights[top];
             area = currHeight * (stack.length ? i-1-top : i);
             maxArea = Math.max(area, maxArea);
         }
@@ -26,6 +26,7 @@ function largestRectangleArea(heights){
     return maxArea;
 }
 
-let arr = [1, 2, 1, 8, 8, 3];
+let arr = [1, 2, 5, 5, 6, 1, 3];
+console.log(`The given array is : ${arr}`);
 let result = largestRectangleArea(arr);
-console.log(result);
+console.log(`The largest rectangle in histogram : ${result}`);

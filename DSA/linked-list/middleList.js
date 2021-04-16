@@ -30,7 +30,7 @@ class linkedList{
 }
 
 const obj = new linkedList();
-let arr = [5, 6, 7, 8, 9];
+let arr = [5, 6, 7, 8, 9, 10];
 for(i of arr){
     obj.insert(i)
 }
