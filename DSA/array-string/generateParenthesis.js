@@ -8,5 +8,5 @@ const generateParenthesis = (n, str = '', left = 0, right = 0) => {
     return arr;
   }
  let result = generateParenthesis(3);
- console.log(`The generating parenthesis are : in js`);
+ console.log(`The generating parenthesis are :`);
  console.log(result);

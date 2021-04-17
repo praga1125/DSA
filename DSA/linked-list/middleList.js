@@ -1,7 +1,7 @@
 class Node{
-    constructor(data, next = null){
+    constructor(data){
         this.data = data;
-        this.next = next;
+        this.next = null;
     }
 }
 class linkedList{
@@ -30,7 +30,7 @@ class linkedList{
 }
 
 const obj = new linkedList();
-let arr = [5, 6, 7, 8, 9, 10];
+let arr = [5, 6, 7, 9, 10];
 for(i of arr){
     obj.insert(i)
 }
