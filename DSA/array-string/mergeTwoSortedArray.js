@@ -1,3 +1,4 @@
+//merge two sorted array in O(1) space complexity
 let arr1 = [1, 5, 7, 9, 12];
 let arr2 = [2, 3, 4, 6, 14, 15];
 console.log(`before merging array :`);

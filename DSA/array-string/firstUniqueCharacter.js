@@ -11,7 +11,7 @@ for(let i=0;i<words.length;i++){
 }
 return -1;
 }
-const words = "population   ";
+const words = "manam";
 const result = unique(words);
 if (result == -1){
 console.log(`contains no unique values`);

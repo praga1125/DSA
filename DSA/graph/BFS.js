@@ -52,7 +52,7 @@ class graph{
 }
 
 const obj = new graph(6);
-const vertices = ['a', 'b', 'c', 'd', 'e', 'f'];
+const vertices = ['b', 'a', 'c', 'd', 'e', 'f'];
 for(let i=0;i<vertices.length;i++){
     obj.addVertex(vertices[i]);
 }

@@ -28,13 +28,13 @@ function dequeue(){
          queue.rear = null;
 
          return `queue is empty`;
-     }
+        }
 }
-enqueue(50);
-enqueue(40);
-enqueue(30);
-enqueue(20);
-enqueue(10);
+
+let arr = [10, 20, 30, 40, 50];
+for(let i of  arr){
+    enqueue(i);
+}
 console.log();
 console.log(dequeue());
 console.log(dequeue());

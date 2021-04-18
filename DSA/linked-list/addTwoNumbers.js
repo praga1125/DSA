@@ -9,7 +9,7 @@ class LinkedList {
         this.head = head;
     }
 
-  addElements(elements){
+    addElements(elements){
      let node1 = new Node(elements);
       if(this.head == null){
           this.head = node1;
