@@ -11,6 +11,7 @@ class binarySearchTree{
     constructor(){
         this.root = null;
     }
+
     insertNode(value){
         let node = new Node(value);
         if(this.root == null){
@@ -62,6 +63,7 @@ console.log(arr);
 for(let i of arr){
     obj.insertNode(i);
 }
+
 let result = obj.postOrder(obj.root);
 console.log(`The postorder traversal for the binary search tree :`);
 console.log(result);
