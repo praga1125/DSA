@@ -9,6 +9,7 @@ function orangeRotting(arr){
             }
             if(arr[i][j] == 2){
                 queue.push([i, j]);
+                // console.log(queue);
             }
         }
     }
@@ -20,14 +21,14 @@ function orangeRotting(arr){
         let current = queue.shift();
         for(let i=0; i<directionRow.length; i++){
             let nR = current[0]+directionRow[i];
-          let nC = current[1]+directionCol[i];
-            if(nR >= 0 && nC >= 0 && nR < arr.length && nC < arr[0].length) {
-                   if(arr[nR][nC] == 1){
-                        arr[nR][nC] = 2;
-                        fresh--;
-                        next.push([nR, nC]);
+            let nC = current[1]+directionCol[i];
+            if(nR >= 0 && nC >= 0 && nR < arr.length && nC < arr[0].length){
+                if(arr[nR][nC] == 1){
+                    arr[nR][nC] = 2;
+                    fresh--;
+                    next.push([nR, nC]);
                 }
-            }   
+            }
         }
     }
     minute++;
