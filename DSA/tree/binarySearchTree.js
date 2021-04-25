@@ -49,15 +49,15 @@ class binarySearchTree{
         if(node !== null) 
         {  
             console.log(node.data);  
-            this.inorder(node.left);
-            this.inorder(node.right); 
+            this.preorder(node.left);
+            this.preorder(node.right); 
         }
     } 
     postorder(node){ 
         if(node !== null) 
             {  
-                this.inorder(node.left);
-                this.inorder(node.right); 
+                this.postorder(node.left);
+                this.postorder(node.right); 
                 console.log(node.data);  
             } 
         }
@@ -66,9 +66,9 @@ class binarySearchTree{
     }
 }
 const obj = new binarySearchTree();
-let values = [9, 5, null, 8, 2];
-for(let i = 0; i < values.length; i++){
-    obj.insert(values[i]);
+let arr = [9, 5, null, 8, 2];
+for(let i = 0; i < arr.length; i++){
+    obj.insert(arr[i]);
 }
 let root = obj.getRootNode();
 

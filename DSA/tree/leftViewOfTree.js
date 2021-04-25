@@ -42,7 +42,7 @@ class binarySearchTree{
     preOrder(node){ 
         if(node !== null) 
         {  
-            this.str.push(String(node.data)); 
+            this.str.push(node.data); 
             this.preOrder(node.left);
         }
     } 
