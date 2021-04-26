@@ -44,9 +44,13 @@ class LinkedList{
         for(let i=1; i<=length-count; i++){
             slow = slow.next;
         }
+        console.log(dummy);
         fast.next = dummy.next;
+        console.log(fast);
         dummy.next = slow.next;
+        console.log(slow);
         slow.next = null;
+        console.log(slow);
         return dummy.next;
     }
 }

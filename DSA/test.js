@@ -1,1 +1,0 @@
-console.log((2.00000**-2).toFixed(5));
