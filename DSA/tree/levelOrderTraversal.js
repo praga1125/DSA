@@ -60,9 +60,12 @@ class binaryTree{
 }
 
 let arr = [30, 20, 10, 40, 50, 35, 25];
+console.log(`The given in binary tree is : `);
+console.log(arr);
 let obj = new binaryTree();
 for(let num of arr){
   obj.insertNode(num);
 }
 let result = obj.levelOrderTraversal(obj.root);
+console.log(`The level order traversal of tree is : `);
 console.log(result);
