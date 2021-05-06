@@ -1,16 +1,19 @@
 function removeDuplicates(arr){
-  let i = 0;
-  for(let j = 1; j < arr.length; j++){
-    if(arr[i] != arr[j]){
-      i++;
-      arr[i] = arr[j];
+  let obj = {};
+  let result = [];
+  for(let i=0; i<arr.length;i++){
+    if(obj[arr[i]] == 0){
+        obj[arr[i]] = 1;
+    }
+    else {
+      obj[arr[i]] = 0;
+      result.push(arr[i]);
     }
   }
-  arr.length = i + 1;
-  return arr;
+  return result;
 }
 
-let arr = [1, 1, 1, 2, 2, 2, 3, 4, 5, 6];
+let arr = [1, 3, 4, 5, 1, 2, 3];
 console.log(`The given array is : ${arr}`);
 let result = removeDuplicates(arr);
 console.log(`The removed duplicates array is : ${result}`);
