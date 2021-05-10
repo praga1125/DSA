@@ -64,6 +64,7 @@ for(let i of arr){
     obj.insertNode(i);
 }
 
+console.log(obj.root);
 let result = obj.postOrder(obj.root);
 console.log(`The postorder traversal for the binary search tree :`);
 console.log(result);

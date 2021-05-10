@@ -6,14 +6,14 @@ function maxSlidingWindow(arr, limit){
       indx.pop();
     }
     indx.push(i);
-    if(indx[0] == i - limit){
+    if(i == limit-i){
       indx.shift();
     }
     if(i >= limit-1){
-     result.push(arr[indx[0]])  
-  } 
- }
- return result;
+      result.push(arr[indx[0]]);
+    }
+  }
+  return result;
 }
 
 let arr = [1, 3, -1, -3, 5, 3, 6, 7];

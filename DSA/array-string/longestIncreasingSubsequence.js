@@ -5,7 +5,6 @@ const longestIncreaseSubsequence = (arr) => {
     let low = 0, high = temp.length-1;
     while(low < high){
       let mid = Math.floor((low + high) / 2);
-      // console.log(mid);
       if(temp[mid] >= target){
         high = mid;
       }
@@ -19,11 +18,8 @@ const longestIncreaseSubsequence = (arr) => {
     const indx = binarySearch(num);
     temp[indx] = num;
    }
-   for(let i=0; i<temp.length-1; i++){
-     sum += temp[i];
-   }
-  //  let result = temp.indexOf(Infinity);
-  //  return result == -1 ? arr.length : result;
+   let result = temp.indexOf(Infinity);
+   return result == -1 ? arr.length : result;
 }
 
 let arr = [3, 9, 4, 5, 6];

@@ -39,7 +39,9 @@ function longestPrefix(str){
   return matches;
 }
 
-let str = "hello world, welcome you all ";
-let pattern = "world";
+let str = "stay home , stay safe";
+console.log(`The given String is : ${str}`);
+let pattern = "home";
+console.log(`The given target pattern is : ${pattern}`);
 let result = kmpMatching(str, pattern);
-console.log(result);
+console.log(`pattern is matched at index of : ${result}`);

@@ -3,11 +3,11 @@ function nextPermutation(nums){
         if(nums[i] < nums[i+1]){
             let large = nextLarge(i);
             swap(i , large);
-            reverse(i+1);
+            reverse(i+1);   
             return nums;
         }
     }
-     nums.reverse();
+    //  nums.reverse();
     function swap(i, j){
         [nums[i], nums[j]] = [nums[j], nums[i]];
     }

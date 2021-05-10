@@ -9,10 +9,10 @@ function uniquePath(row, col){
       top *= total - i;
       bottom *= i + 1;
   }
-  return top/bottom;
+  return top / bottom;
 }
 
-let row = 7, col = 3;
+let row = 3, col = 2;
 console.log(`The given grid of row : ${row} and column : ${col} `);
 let result = uniquePath(row, col);
 console.log(`The possible unique paths are : ${result}`);
