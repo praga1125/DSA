@@ -23,26 +23,21 @@ class linkedList {
   }
 
   mergeList(list1, list2){
-    let result = new Node(null);
-    let current =  result;
-    while(list1 != null && list2 != null){
+    let tempNode = new Node(0);
+    let currentNode = tempNode;
+    while(list1 && list2){
       if(list1.data < list2.data){
-        current.next = list1;
+        currentNode.next = list1;
         list1 = list1.next;
       }
       else {
-        current.next = list2;
+        currentNode.next = list2;
         list2 = list2.next;
       }
-      current = current.next;
+      currentNode = currentNode.next;
     }
-    if(list1 == null){
-      current = list2;
-    }
-    if(list2 == null){
-      current = list1;
-    }
-    return result.next;
+    currentNode.next = list1 || list2;
+    return tempNode.next;
   }
 
   printList(node){
@@ -58,6 +53,7 @@ class linkedList {
 
 let obj1 = new linkedList();
 let obj2 = new linkedList();
+let obj3 = new linkedList();
 const list1 = [1, 2, 7];
 const list2 = [1, 4, 6, 8];
 for(let i = 0; i < list1.length; i++){
@@ -66,10 +62,9 @@ for(let i = 0; i < list1.length; i++){
 for(let j = 0; j < list2.length; j++){
   obj2.insert(list2[j]);
 }
-
-let result = obj1.mergeList(obj1.head, obj2.head);
 console.log(`The given two linked list are :`);
 obj1.printList(obj1.head);
 obj1.printList(obj2.head);
+let result = obj3.mergeList(obj1.head, obj2.head);
 console.log(`The merged linked list is :`);
-obj1.printList(result);
+obj3.printList(result);
