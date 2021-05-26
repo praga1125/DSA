@@ -1,27 +1,28 @@
-const copyRandomList = (head) => {
-    if (head == null) {
-        return null;
+
+const flatten = (root) => {
+function flat(node) {
+    if (node == null) return null;
+    let leftTail = flat(node.left);
+    let rightTail = flat(node.right);
+    
+    if (node.left == null && node.right == null) {
+        return node;
+    } else if (node.left == null) {
+        return rightTail;
+    } else if (node.right == null) {
+        let leftHead = node.left;
+        node.right = leftHead;
+        node.left = null;
+        return leftTail;
+    } else {
+        let leftHead = node.left;
+        let rightHead = node.right;
+        leftTail.right = rightHead;
+        node.right = leftHead;
+        node.left = null;
+        return rightTail;
     }
-    let temp = head;
-    while (temp !== null) {
-        let newNode = new Node(temp.val);
-        newNode.next = temp.next;
-        temp.next = newNode;
-        temp = newNode.next;
-    }
-    temp = head;
-    while (temp !== null) {
-        temp.next.random = temp.random ? temp.random.next : null;
-        temp = temp.next.next;
-    }
-    let oldList = head;
-    let newList = head.next;
-    let dummy = newList;
-    while (oldList !== null) {
-        oldList.next = oldList.next.next;
-        newList.next = newList.next ? newList.next.next : null;
-        oldList = oldList.next;
-        newList = newList.next;
-    }
-    return dummy;
-}   
+}
+  if (root == null) return;
+    flat(root);
+};
