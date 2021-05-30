@@ -1,23 +1,23 @@
-let permutation = function(values){
-    let result = [];
-    dfs(values, [], Array(values.length).fill(false),result)
-    return result;
+function permutation (arr){
+  let result = [];
+  helper(arr, 0, result);
+  return result;
 }
-let dfs = function(values, path, used,result){
-    if(path.length == values.length){
-        result.push(Array.from(path));
-        return;
+function helper (arr, indx, result){
+    if(indx == arr.length){
+        result.push([...arr]);
     }
-    for(let i=0;i< values.length;i++){
-        if(used[i]){
-            continue;
-        }
-        path.push(values[i]);
-        used[i] = true;
-        dfs(values, path, used, result);
-        path.pop();
-        used[i] = false;
+    for(let i = indx; i < arr.length; i++){
+        swap(arr, indx, i);
+        helper(arr, indx+1, result);
+        swap(arr, indx, i);
     }
+}
+
+function swap (arr, i1, i2){
+    let temp = arr[i1];
+    arr[i1] = arr[i2];
+    arr[i2] = temp;
 }
 
 let arr = ['a', 'b', 'c'];

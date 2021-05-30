@@ -27,4 +27,4 @@ const dividend = 7, divisor =  -3;
 console.log(`The dividend is : ${dividend}, divisor is : ${divisor}`);
 const result = divideTwoNumbers(dividend, divisor);
 console.log(`The division of the two numbers is : ${result}`);
-console.log('(without using multiplication, division, modulus operator)');
+console.log('(without using multiplication, division, modulus operators)');

@@ -19,10 +19,10 @@ function SubSetSum(arr, target){
   return temp[sum][arr.length] ? 1 : 0;
 }
 
-let arr = [1, 2, 3, 4, 5, 6];
+let arr = [1, 2, 2, 4, 5, 6];
 console.log(`The given array is :`);
 console.log(arr);
-let sum = 4;
+let sum = 0;
 console.log(`The given sum value is : ${sum}`);
 let result = SubSetSum(arr, sum);
 if(result){

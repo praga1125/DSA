@@ -1,14 +1,14 @@
 let maxProfit = (prices) => {
-    let min = Number.MAX_SAFE_INTEGER; 
-    let max = 0;
-    for (let i = 0; i < prices.length; i++) {
-        min = Math.min(min, prices[i]);
-        max = Math.max(max, prices[i] - min + 1);
-    }
-    console.log(`The best time to buy a stock : ${min}`);
-    return max;
+  let profit = 0;
+  let minPrice = prices[0];
+  for (let i = 1; i < prices.length; i++) {
+    minPrice = Math.min(minPrice, prices[i])
+    profit = Math.max(profit, prices[i] - minPrice)
+  }
+  return profit;
 }
 
-let prices = [5, 3, 2, 1, 5, 1, 6];
+let prices = [7,1,5,3,6,4];
+console.log(`The given prices are : [${prices}]`);
 let result = maxProfit(prices);
 console.log(`The best time to sell a stock : ${result}`);

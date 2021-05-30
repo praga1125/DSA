@@ -17,6 +17,6 @@ function backTrack(result, n, board = [], row = 0){
   }
 }
 
-let n = 3;
+let n = 4;
 let result = solveNQueens(n);
 console.log(result); 

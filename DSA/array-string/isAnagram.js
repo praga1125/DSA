@@ -17,8 +17,8 @@ function isAnagram(str1, str2) {
   return true;
 }
 
-const str1 = "TON";
-const str2 = "NOT";
+const str1 = "abc";
+const str2 = "cab";
 console.log(`The given strings are : ${str1} and ${str2}`);
 const result = isAnagram(str1, str2);
 if(result){

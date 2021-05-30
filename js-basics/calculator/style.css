@@ -13,3 +13,13 @@
     background-color: rgba(86,61,124,.15);
     border: 1px solid rgba(86,61,124,.2);
 }
+html {
+    background-color: rgb(66, 209, 235);
+}
+body {
+    margin: 40px;
+    border: 2px solid black;
+    padding: 40px;
+    background-color: rgb(54, 224, 216);
+    border-style: dashed;
+}
