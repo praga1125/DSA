@@ -1,31 +1,25 @@
-let intersect = (arr1, arr2) => {
-    const map = new Map();
-    for(const i of arr1){
-        if(map.has(i)){
-            map.set(i, map.get(i)+1);
-        }
-        else{
-            map.set(i, 1);
-        }
-    }
-    let commonValues = [];
-    for(const j of arr2){
-        if(map.has(j) && map.get(j) > 0){
-            if(commonValues.includes(j)){
-              map.set(j, map.get(j)-1);
-            }
-            else{
-                commonValues.push(j);
-                map.set(j, map.get(j)-1);   
-            }
-         }
-    }
-    return commonValues;
+let intersect = (nums1, nums2) => {
+	let base, sub;
+	if (nums1.length > nums2.length) {
+		base = nums1;
+		sub = nums2;
+	} else {
+		base = nums2;
+		sub = nums1;
+	}
+	let result = [];
+	for (let i = 0; i < sub.length; i++) {
+		if (base.includes(sub[i])) {
+			result.push(sub[i]);
+			base[base.indexOf(sub[i])] = null;
+		}
+	}
+	return result;
 }
 
 console.log(`The given array values :`);
 let arr1 = [11, 22, 22, 33];
-let arr2 = [11, 22, 33, 44, 22, 11, 33];
+let arr2 = [11, 22, 33, 44, 11, 33];
 console.log(arr1);
 console.log(arr2);
 let result = intersect(arr1, arr2);
