@@ -10,7 +10,7 @@ let search = function (matrix, target) {
 			y--;
 		}
 		if (matrix[x][y] === target) {
-			return console.log(`The search element position index at : ${x}, ${y}`);;
+			return console.log(`The search element position index at : ${x}, ${y}`);
 		}
 	}
 	return console.log(`The search element is not found`);
