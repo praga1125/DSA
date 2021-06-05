@@ -1,9 +1,13 @@
 let maxProfit = (prices) => {
   let profit = 0;
-  let minPrice = prices[0];
+  let min = prices[0];
   for (let i = 1; i < prices.length; i++) {
-    minPrice = Math.min(minPrice, prices[i])
-    profit = Math.max(profit, prices[i] - minPrice)
+    let curr = prices[i]
+        if (curr < min) {
+            min = curr;
+        } else if (curr - min > profit) {
+            profit = curr - min;
+        }
   }
   return profit;
 }
