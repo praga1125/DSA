@@ -24,19 +24,19 @@ class linkedList {
 	}
 
 	removeNthNode(head, target) {
-	let list = [];
-	let node = head;
-	while(node != null) {
-		list.push(node);
-		node = node.next;
-	}
-	let targetNode = list[list.length - target - 1];
-	if(target == list.length) {
-		head  = head.next;
-	}	else {
-		targetNode.next = targetNode.next == null ? null : targetNode.next.next;
-	}
-	return head;
+		let list = [];
+		let node = head;
+		while (node != null) {
+			list.push(node);
+			node = node.next;
+		}
+		let targetNode = list[list.length - target - 1];
+		if (target == list.length) {
+			head = head.next;
+		} else {
+			targetNode.next = targetNode.next == null ? null : targetNode.next.next;
+		}
+		return head;
 	}
 	printList(list) {
 		let curr = list;
