@@ -5,12 +5,15 @@ const minWindow = function (s, t) {
 	for (let i = 0; i < t.length; i++) {
 		arr[t.charCodeAt(i)]++;
 	}
+
 	let start = 0;
+	
 	for (let end = 0; end < s.length; end++) {
 		if (arr[s.charCodeAt(end)] > 0) {
 			missing--;
 		}
 		arr[s.charCodeAt(end)]--;
+
 		while (missing == 0) {
 			if (result[1] - result[0] > end - start) {
 				result[1] = end;
