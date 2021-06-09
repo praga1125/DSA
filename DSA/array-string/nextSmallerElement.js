@@ -1,18 +1,14 @@
 function nextSmallerElement(arr) {
-	let length = arr.length;
-	let result = [...Array(length)].map(() => -1);
-	let stack = [];
-	for (let i = 0; i < length; i++) {
-		let stackTopVal = stack[stack.length - 1] && stack[stack.length - 1].val;
-		if (!stack.length || arr[i] > stackTopVal) {
-			stack.push({ val: arr[i], ind: i });
+	var result = [-1],
+		  stack = [];
+	for (var i = 1; i < arr.length; i++) {
+		if (arr[i] > arr[i - 1]) {
+			result.push(arr[i - 1]);
+			stack.push(arr[i - 1]);
 		} else {
-			while (
-				arr[i] < (stack[stack.length - 1] && stack[stack.length - 1].val)
-			) {
-				result[stack.pop().ind] = arr[i];
-			}
-			stack.push({ val: arr[i], ind: i });
+			while (stack.length && stack[stack.length - 1] >= arr[i]) stack.pop();
+			if (stack.length) result.push(stack[stack.length - 1]);
+			else result.push(-1);
 		}
 	}
 	return result;
