@@ -1,18 +1,19 @@
-function combinationSum(arr, target){
-    const result = [];
-    function permute(arr1=[], sum=0, idx=0) {
-        if(sum > target) {
-            return;
-        }
-        if(sum === target){ 
-            result.push(arr1);
-        }
-        for(let i = idx; i < arr.length; i++) {
-            permute([...arr1, arr[i]], sum+arr[i], i);
-        }
-    }
-    permute();
-    return result;
+function combinationSum(nums, target) {
+	const result = [];
+	const dfs = (i, arr, target, slate) => {
+		if (target < 0) return; // backtrack case
+		if (target === 0) {
+			result.push(slate.slice()); 
+			return;
+		}
+		for (let j = i; j < arr.length; j++) {  // dfs
+			slate.push(arr[j]);
+			dfs(j, arr, target - arr[j], slate);
+			slate.pop();
+		}
+	};
+	dfs(0, nums, target, []);
+	return result;
 }
 
 let arr = [2, 3, 6, 7];
