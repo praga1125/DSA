@@ -1,28 +1,18 @@
-
-const flatten = (root) => {
-function flat(node) {
-    if (node == null) return null;
-    let leftTail = flat(node.left);
-    let rightTail = flat(node.right);
-    
-    if (node.left == null && node.right == null) {
-        return node;
-    } else if (node.left == null) {
-        return rightTail;
-    } else if (node.right == null) {
-        let leftHead = node.left;
-        node.right = leftHead;
-        node.left = null;
-        return leftTail;
-    } else {
-        let leftHead = node.left;
-        let rightHead = node.right;
-        leftTail.right = rightHead;
-        node.right = leftHead;
-        node.left = null;
-        return rightTail;
-    }
-}
-  if (root == null) return;
-    flat(root);
+const flatten = (head) => {
+	if(!head) return null;
+	let dummyNode = new Node(0, null, null, null);
+	let currentNode = dummyNode;
+	recurse(currentNode, head);
+	dummyNode.next.prev = null;
+	return dummyNode.next;
 };
+
+const recurse = (prev, curr) => {
+	if(!curr) return prev;
+	curr.prev = prev;
+	prev.next = curr;
+	let tempNode = curr.next;
+	let mergeNode = recurse(curr, curr.child);
+	curr.child = null;
+	return recurse(mergeNode, tempNode);
+}
