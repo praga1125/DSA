@@ -10,14 +10,13 @@ Stack.prototype.push = function(value) {
 }
 
 Stack.prototype.pop = function() {
-    while (this.queue.length > 1){
+    while(this.queue.length > 1) {
         this.temp.push(this.queue.shift());
     }
-    console.log(`The popped element is : ${this.queue.shift()}`);
+    console.log('');
     this.queue = this.temp;
     this.temp = [];
-    return this.queue;
-}
+    }
 
 Stack.prototype.top = function() {
     while (this.queue.length > 1){

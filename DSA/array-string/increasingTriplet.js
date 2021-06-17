@@ -1,27 +1,24 @@
-function increasingTriplet(arr){
-    let firstNumber = Infinity;
-    let secondNumber = Infinity;
-    for (let currentNumber of arr) {
-      if (currentNumber > secondNumber && currentNumber > firstNumber) {
-        return true;
-      }
-      if (currentNumber > firstNumber) {
-        secondNumber = currentNumber;
-      } 
-      else {
-        firstNumber = currentNumber;
-      }
-    }
-    return false;
-  }
+function increasingTriplet(nums) {
+	let first = Infinity;
+	let second = Infinity;
+	for (let num of nums) {
+		if (num <= first) {
+			first = num;
+		} else if (num <= second) {
+			second = num;
+		} else {
+			return true;
+		}
+	}
+	return false;
+}
 
-  let arr = [1, 2, 10, 5, 2];
-  console.log(`The given array is :`);
-  console.log(arr);
-  let result = increasingTriplet(arr);
-  if(result){
-      console.log(`It is increasing triplet Subsequence`);
-  }
-  else{
-      console.log(`It is not a increasing triplet Subsequence`);
-  }
+let arr = [1, 2, 10, 5, 2];
+console.log(`The given array is :`);
+console.log(arr);
+let result = increasingTriplet(arr);
+if (result) {
+	console.log(`It is increasing triplet Subsequence`);
+} else {
+	console.log(`It is not a increasing triplet Subsequence`);
+}

@@ -7,7 +7,7 @@ function findDuplicate(arr){
         fast = arr[arr[fast]];
     }
     
-    slow = 0;
+    fast = 0;
     
     while (slow != fast) {
         slow = arr[slow];
@@ -17,7 +17,7 @@ function findDuplicate(arr){
     return slow;
 }
 
-let arr = [1, 4, 1, 2, 1];
+let arr =[2 , 1, 1];
 console.log(`The given array is : ${arr}`);
 let result =  findDuplicate(arr);
 if(result == undefined){

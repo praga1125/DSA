@@ -39,7 +39,7 @@ class LinkedList {
     hasCycle(head){
         let tortoise = head;
         let hare = head;
-        while (hare && hare.next && hare.next.next) {
+        while (hare && hare.next) {
             tortoise = tortoise.next
             hare = hare.next.next   
             if (tortoise === hare) {
@@ -66,7 +66,7 @@ for(i of arr){
 }
 console.log(`The given linked list is :`);
 obj.printList(obj.head);
-obj.makeCycle(obj.head, 1);
+obj.makeCycle(obj.head, 2);
 let result = obj.hasCycle(obj.head);
 if(result){
     console.log(`The linked list has a cycle`);

@@ -6,9 +6,9 @@ class Node {
 	}
 }
 class binarySearchTree {
-  constructor () {
-    this.ans = [];
-  }
+	constructor() {
+		this.ans = [];
+	}
 	insert(root, data) {
 		if (root == null) {
 			root = new Node(data, null, null);
@@ -23,10 +23,10 @@ class binarySearchTree {
 	inOrder(node) {
 		if (node !== null) {
 			this.inOrder(node.left);
-      this.ans.push(node.value);
+			this.ans.push(node.value);
 			this.inOrder(node.right);
 		}
-    return this.ans;
+		return this.ans;
 	}
 }
 

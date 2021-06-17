@@ -28,6 +28,6 @@ console.log(matrix);
 let target = 111;
 console.log(`The target element is ${target}`);
 search(matrix, target);
-target = 23;
+target = 1;
 console.log(`The target element is ${target}`);
 search(matrix, target);

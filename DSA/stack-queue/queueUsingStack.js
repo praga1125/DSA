@@ -38,7 +38,7 @@ obj.isEmpty();
 for(let i=0;i<arr.length;i++){
 	obj.push(arr[i]);
 }
-obj.peek();9
+obj.peek();
 obj.display();
 obj.pop();
 obj.pop();

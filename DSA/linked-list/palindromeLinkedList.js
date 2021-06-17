@@ -54,7 +54,7 @@ class LinkedList {
 }
 
 let obj = new LinkedList();
-let arr = [8, 2];
+let arr = [8, 2, 8];
 for (i of arr) {
 	obj.addElements(i);
 }

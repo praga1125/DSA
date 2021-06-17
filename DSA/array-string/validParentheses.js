@@ -1,29 +1,28 @@
-function valid(str){
-    const  temp = [];
-    for(let i=0;i<str.length;i++){
-        let c = str.charAt(i);
-        switch(c){
-            case '(':
-                temp.push(')');
-                break;
-            case '[':
-                temp.push(']');
-                break;
-            case '{':
-                temp.push('}');
-                break;
-            default:
-                if(c !== temp.pop()){
-                    return false;
-               }
+const BRACKETS = {
+    '{':'}',
+    '[':']',
+    '(':')',
+}
+
+var isValid = function(s) {
+    const stack = [];
+    let isValid = true;
+    for (bracket of s){
+        if (BRACKETS[bracket]){
+            stack.push(bracket);
+        } else {
+            const popped = stack.pop();
+            if (bracket !== BRACKETS[popped]){
+                return false;
+            }
         }
     }
-    return temp.length == 0;
-}
+    return isValid && stack.length == 0;
+};
 
 let parentheses = "()[]{}";
 console.log(`The given parentheses : ${parentheses}`);
-let result = valid(parentheses);
+let result = isValid(parentheses);
 if(result){
     console.log(`The parentheses is valid`);
 }

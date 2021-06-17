@@ -1,25 +1,34 @@
-function permutation(numbers){
-    let arr = [];
-    numbers = numbers.sort();
-    function permute(current, remaining){
-        if(!remaining.length){
-            arr.push(current);
-            return;
-        }
-        for(let i = 0;i < remaining.length;i++){
-            if(i > 0 && remaining[i] == remaining[i-1]){
-                continue;
-            }
-            else{
-                current.push(remaining[i]);
-                permute([...current], [...remaining.slice(0, i),...remaining.slice(i+1)]);
-                current.pop();
-            }
-        }
-    }
-    permute([], numbers);
-    return arr;
-}
+const permutation = function (nums) {
+	if (nums === null) {
+		return [];
+	}
+
+	const res = [];
+	const visited = new Array(nums.length).fill(false);
+	nums.sort((a, b) => a - b);
+
+	function backtrack(permutations) {
+		if (permutations.length === nums.length) {
+			res.push(permutations.slice(0));
+		}
+
+		for (let i = 0; i < nums.length; i++) {
+			if (visited[i]) {
+				continue;
+			}
+			if (i > 0 && nums[i] === nums[i - 1] && !visited[i - 1]) {
+				continue;
+			}
+			visited[i] = true;
+			permutations.push(nums[i]);
+			backtrack(permutations, i + 1);
+			visited[i] = false;
+			permutations.pop();
+		}
+	}
+	backtrack([]);
+	return res;
+};
 
 let numbers = [1, 2, 3];
 console.log(`The given array is : ${numbers}`);

@@ -1,25 +1,25 @@
-//  Time complexity : O(n)
+//  Time complexity : O(n log n)
 //  Space complexity : O(1)
-function longestConsecutive(arr){
-  if(arr.length < 1){
+function longestConsecutive(nums){
+  if(nums.length == 0) {
     return 0;
   }
-  let maxLen = 1;
-  let counter = 1;
-  arr.sort((a, b) => a - b);
-  for(let i = 1; i < arr.length; i++){
-    if(arr[i] - arr[i - 1] == 1){
-        counter++;
+  let numSet = new Set(nums);
+  let sortArr = [...numSet];
+  let max = 1 ;
+  let count = 1;
+  sortArr.sort((a, b) => a - b);
+  for(let i = 0; i < sortArr.length - 1; i++) {
+    if(sortArr[i] + 1 !== sortArr[i + 1]) {
+      count = 1;
+    } else {
+      count++;
+      if(max < count) {
+        max = count;
+      }
     }
-    else if(arr[i] == arr[i + 1]){
-      continue;
-    }
-    else {
-      maxLen = Math.max(counter, maxLen);
-      counter = 1;
-    }    
   }
-  return Math.max(maxLen, counter);
+  return max;
 }
 
 let arr = [9, 1, 3, 2, 4, 8, 7];

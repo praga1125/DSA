@@ -1,15 +1,15 @@
 function combinationSum(nums, target) {
 	const result = [];
-	const dfs = (i, arr, target, slate) => {
+	const dfs = (i, arr, target, stack) => {
 		if (target < 0) return; // backtrack case
 		if (target === 0) {
-			result.push(slate.slice()); 
+			result.push(stack.slice()); 
 			return;
 		}
 		for (let j = i; j < arr.length; j++) {  // dfs
-			slate.push(arr[j]);
-			dfs(j, arr, target - arr[j], slate);
-			slate.pop();
+			stack.push(arr[j]);
+			dfs(j, arr, target - arr[j], stack);
+			stack.pop();
 		}
 	};
 	dfs(0, nums, target, []);

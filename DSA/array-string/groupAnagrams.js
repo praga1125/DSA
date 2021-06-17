@@ -1,21 +1,22 @@
-function groupAnagrams(words){
-    words = words.sort();
-    let mapping = {};
-    for(let i=0; i<words.length; i++){
-        let str = words[i];
-        let sorted = str.split('').sort().join('');
-        if(mapping[sorted] == undefined){
-            mapping[sorted] = [str];
-        }
-        else{
-            mapping[sorted].push(str);
-        }
-    }
-    let result = [];
-    for(let arr in mapping){
-        result.push(mapping[arr]);
-    }
-    return result;
+function groupAnagrams(str) {
+	let map = new Map();
+	let n = str.length;
+	let result = [];
+	for (let i = 0; i < n; i++) {
+		let word = str[i];
+		let sortedWord = word.split("").sort().join("");
+		if (!map.has(sortedWord)) {
+			map.set(sortedWord, [word]);
+		} else {
+			let words = map.get(sortedWord);
+			words.push(word);
+			map.set(sortedWord, words);
+		}
+	}
+	for (let [k, v] of map) {
+		result.push(v);
+	}
+	return result;
 }
 
 let words = ["cat", "bat", "tab", "loop", "pool", "ate", "eat", "tea"];
