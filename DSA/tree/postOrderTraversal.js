@@ -1,70 +1,44 @@
-// post order traversal in non recursive method..
-class Node{
-    constructor(data){
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
+// post order traversal recursive method..
+class Node {
+	constructor(data) {
+		this.value = data;
+		this.left = null;
+		this.right = null;
+	}
 }
+class binarySearchTree {
+	constructor() {
+		this.ans = [];
+	}
+	insert(root, data) {
+		if (root == null) {
+			root = new Node(data, null, null);
+		} else if (data < root.value) {
+			root.left = this.insert(root.left, data);
+		} else {
+			root.right = this.insert(root.right, data);
+		}
+		return root;
+	}
 
-class binarySearchTree{
-    constructor(){
-        this.root = null;
-    }
-
-    insertNode(value){
-        let node = new Node(value);
-        if(this.root == null){
-            this.root = node;
-        }
-        let current = this.root;
-        while(current){
-            if(value == current.data){
-                return undefined;
-            }
-            if(value < current.data){
-                if(current.left == null){
-                    current.left = node;
-                    return this;
-                }
-                current = current.left;
-            }
-            else {
-                if(current.right == null){
-                    current.right = node;
-                    return this;
-                }
-                current = current.right;
-            }
-        } 
-    }
-
-    postOrder(root){
-       let stack = [root];
-       let result = [];
-       while(stack.length > 0){
-           let node = stack.pop();
-           result.push(node.data);
-           if(node.left){
-               stack.push(node.left);
-           }
-           if(node.right){
-               stack.push(node.right);
-           }
-       }
-       return result.reverse();
-    }
+	postOrder(node) {
+		if (node !== null) {
+			this.postOrder(node.left);
+			this.postOrder(node.right);
+			this.ans.push(node.value);
+		}
+		return this.ans;
+	}
 }
 
 let obj = new binarySearchTree();
-let arr = [2, 1, 3];
+let arr = [1, 3, 2, 4, 0];
+let root;
 console.log(`The given BST is : `);
 console.log(arr);
-for(let i of arr){
-    obj.insertNode(i);
+for (let i of arr) {
+	root = obj.insert(root, i);
 }
-
-console.log(obj.root);
-let result = obj.postOrder(obj.root);
-console.log(`The postorder traversal for the binary search tree :`);
+let result = obj.postOrder(root);
+console.log(`The postOrder traversal for the binary search tree :`);
 console.log(result);
