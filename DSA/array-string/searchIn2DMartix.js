@@ -1,19 +1,25 @@
-let search = function (matrix, target) {
-	if (matrix === null || matrix.length === 0 || matrix[0].length === 0) {
-		return console.log(`The search element is not found`);
-	}
-	let rows = matrix.length;
-	let cols = matrix[0].length;
-	let y = cols - 1;
-	for (let x = 0; x < rows; x++) {
-		while (y && target < matrix[x][y]) {
-			y--;
+const search = function (matrix, target) {
+	let m = matrix.length;
+	if (m === 0) return false;
+	let n = matrix[0].length;
+	let left = 0;
+	let right = m * n - 1;
+	let pivotId;
+	let pivotElement;
+	while (left <= right) {
+		pivotId = Math.floor((left + right) / 2);
+		pivotElement = matrix[Math.floor(pivotId / n)][pivotId % n];
+		if (target === pivotElement) {
+			return true;
+		} else {
+			if (target > pivotElement) {
+				left = pivotId + 1;
+			} else {
+				right = pivotId - 1;
+			}
 		}
-		if (matrix[x][y] === target) {
-			return console.log(`The search element position index at : ${x}, ${y}`);
-		}
 	}
-	return console.log(`The search element is not found`);
+	return false;
 };
 
 const matrix = [
@@ -27,7 +33,8 @@ console.log(`the given matrix :`);
 console.log(matrix);
 let target = 111;
 console.log(`The target element is ${target}`);
-search(matrix, target);
-target = 1;
+console.log(search(matrix, target));
+target = 30;
 console.log(`The target element is ${target}`);
-search(matrix, target);
+console.log(search(matrix, target));
+
