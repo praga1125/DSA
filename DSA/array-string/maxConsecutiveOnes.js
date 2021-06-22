@@ -1,18 +1,15 @@
 const mostConsecutiveOne = (nums) => {
-  let max = 0, count = 0;
-  for(let num of nums){
-    if(num == 1){
-      count++;
-    if(count > max){
-      max = count;
-    }
-  }
-    else {
-      count = 0;
-    }
-  }
-  return max;
-}
+	var i = 0;
+	var result;
+	for (let j = 0; j < nums.length; j++) {
+		if (nums[j] == 1) i++;
+		else {
+			result = result > i ? result : i;
+			i = 0;
+		}
+	}
+	return result > i ? result : i;
+};
 
 let nums = [1, 0, 1, 1, 1, 1, 0, 1];
 console.log(`The given numbers are :`);
