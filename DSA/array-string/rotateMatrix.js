@@ -1,24 +1,11 @@
 function rotateMatrix(matrix) {
-	const transpose = (matrix) => {
-		for (let i = 0; i < matrix.length; i++) {
-			for (let j = i; j < matrix.length; j++) {
-				[matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
-			}
-		}
-	};
-	const reflect = (matrix) => {
-		for (let i = 0; i < matrix.length; i++) {
-			for (let j = 0; j < matrix.length / 2; j++) {
-				[matrix[i][j], matrix[i][matrix.length - j - 1]] = [
-					matrix[i][matrix.length - j - 1],
-					matrix[i][j],
-				];
-			}
-		}
-	};
-	transpose(matrix);
-	reflect(matrix);
-	return matrix;
+    matrix.reverse();
+    for(let i = 0; i < matrix.length; i++) {
+      for(let j = i+1; j < matrix[i].length; j++) {
+        [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+      }
+    }
+		return matrix;
 }
 let matrix = [
 	[1, 2, 3],
