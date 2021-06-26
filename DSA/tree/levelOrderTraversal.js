@@ -40,21 +40,21 @@ class binaryTree{
   }
 
   levelOrderTraversal(root){
-    return Bfs(root ? [root] : []);
-     
-   function Bfs(nodes, result = []){
-      if(nodes.length == 0){
-        return result;
+    let result = [];
+    if(!root) return result;
+    return traversal(root, 0, result);
+    function traversal(root, level, result) {
+      if(result.length == level) {
+        result.push([]);
       }
-      let valuesRow = [], newNodes = [];
-      for(let i = 0; i < nodes.length; i++){
-        const node = nodes[i];
-         valuesRow.push(node.data);
-         node.left && newNodes.push(node.left);
-         node.right && newNodes.push(node.right);
+      result[level].push(root.data);
+      if(root.left) {
+        traversal(root.left, level+1, result);
       }
-      result.push(valuesRow);
-      return Bfs(newNodes, result);
+      if(root.right) {
+        traversal(root.right, level+1, result);
+      }
+      return result;
     }
   }
 }
