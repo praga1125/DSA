@@ -1,21 +1,18 @@
-function minimumNumberOfCoins(coins, amount, dp={}){
-    let min=Infinity,count;
-    if (amount in dp) {
-      return dp[amount];
-    }
-    if (amount < 0) {
-      return -1;
-    }
-    if (amount==0) {
-      return 0;
-    }
-    for (let coin of coins) {
-      count = minimumNumberOfCoins(coins,amount-coin,dp);
-      if (count!=-1){ 
-      min=Math.min(min,1+count);
+function minimumNumberOfCoins(coins, amount) {
+  if(!amount) return 0;
+  let dp = new Array(amount + 1).fill(Number.MAX_VALUE);
+  dp[0] = 0; 
+  for(let i = 0; i < coins.length; i++) {
+    let coin = coins[i];
+    for(let j = 1; j <= amount; j++) {
+      if(coin <= j)
+        let diff = dp[j - coin];
+      if(diff != -1 && diff + 1 < dp[j]) {
+        dp[j] = diff + 1;
       }
     }
-    return (min == Infinity) ? dp[amount] = -1 : dp[amount] = min; 
+  }
+  return dp[amount] === Number.MAX_VALUE ? -1 : dp[amount];
 }
 
 const coins = [1, 2, 5];
