@@ -11,11 +11,13 @@ if (pre[n] < target) {
   console.log(-1);
 } else {
   let ans = Infinity;
+
   for (let i = 1; i <= n; i++) {
     let left = i,
       right = n,
       mid;
-    // using binary search for find minimum distance
+
+    // using binary search for find minimum value
     while (left <= right) {
       mid = (left + right) / 2;
       if (pre[mid] - pre[i - 1] >= target) {
